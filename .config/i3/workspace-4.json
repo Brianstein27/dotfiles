@@ -1,0 +1,96 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1032,
+       "width": 1898,
+       "x": 11,
+       "y": 37
+    },
+    "marks": [],
+    "name": "Google Calendar - March 2024 - Google Chrome",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Google\\-chrome$",
+       // "instance": "^google\\-chrome$",
+       // "machine": "^DebPad$",
+       // "title": "^Google\\ Calendar\\ \\-\\ March\\ 2024\\ \\-\\ Google\\ Chrome$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "marks": [],
+            "percent": 0.7,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1032,
+                       "width": 463,
+                       "x": 1446,
+                       "y": 37
+                    },
+                    "marks": [],
+                    "name": "Upcoming – Todoist",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^Todoist$",
+                       // "instance": "^todoist$",
+                       // "machine": "^DebPad$",
+                       // "title": "^Upcoming\\ \\–\\ Todoist$",
+                       // "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 360,
+               "width": 360,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Solanum",
+            "percent": 0.3,
+            "swallows": [
+               {
+               // "class": "^solanum$",
+               // "instance": "^solanum$",
+               // "machine": "^DebPad$",
+               // "title": "^Solanum$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

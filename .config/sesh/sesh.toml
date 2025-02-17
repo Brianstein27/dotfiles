@@ -1,0 +1,15 @@
+[[session]]
+name = "tmux|zsh config"
+path = "~"
+startup_command = "nvim -O .tmux.conf .zshrc"
+
+[[session]]
+name = "sesh config"
+path = "~/.config/sesh"
+startup_command = "nvim sesh.toml"
+
+[[session]]
+name = "new template"
+path = "~/.tmuxinator"
+startup_command = "tmuxinator new template"
+

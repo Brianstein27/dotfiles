@@ -42,20 +42,20 @@ vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, opts)
 
 -- File tree
 vim.keymap.set("n", "<leader>i", function()
-  if vim.bo.filetype == "oil" then
-    require("oil").close()
-  else
-    require("oil").open_float(nil, { preview = { horizontal = true } })
-  end
+	if vim.bo.filetype == "oil" then
+		require("oil").close()
+	else
+		require("oil").open_float(nil, { preview = { horizontal = true } })
+	end
 end)
 
 vim.keymap.set("n", "<leader>e", function()
-  local cwd = vim.uv.cwd()
-  if vim.bo.filetype == "oil" then
-    require("oil").close()
-  else
-    require("oil").open_float(cwd, { preview = { horizontal = true } })
-  end
+	local cwd = vim.uv.cwd()
+	if vim.bo.filetype == "oil" then
+		require("oil").close()
+	else
+		require("oil").open_float(cwd, { preview = { horizontal = true } })
+	end
 end)
 
 -- Messages
@@ -80,15 +80,10 @@ vim.keymap.set("n", "<C-b>", require("telescope.builtin").buffers, opts)
 vim.keymap.set("n", "<leader>fk", require("telescope.builtin").keymaps, opts)
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, opts)
 vim.keymap.set("n", "<leader>fm", require("telescope.builtin").man_pages, opts)
-vim.keymap.set("n", "<leader>ec", function()
-  require("telescope.builtin").find_files({
-    cwd = "~/.config",
-  })
-end)
 vim.keymap.set("n", "<leader>en", function()
-  require("telescope.builtin").find_files({
-    cwd = vim.fn.stdpath("config"),
-  })
+	require("telescope.builtin").find_files({
+		cwd = "~/dotfiles/.config/nvim/",
+	})
 end)
 
 -- Debugger
@@ -100,22 +95,22 @@ vim.keymap.set("n", "<leader>dx", require("dap").step_out, {})
 
 -- Harpoon
 vim.keymap.set("n", "<leader>ha", function()
-  require("harpoon"):list():add()
+	require("harpoon"):list():add()
 end)
 vim.keymap.set("n", "<leader>hl", function()
-  require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+	require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
 end)
 vim.keymap.set("n", "<leader>h1", function()
-  require("harpoon"):list():select(1)
+	require("harpoon"):list():select(1)
 end)
 vim.keymap.set("n", "<leader>h2", function()
-  require("harpoon"):list():select(2)
+	require("harpoon"):list():select(2)
 end)
 vim.keymap.set("n", "<leader>h3", function()
-  require("harpoon"):list():select(3)
+	require("harpoon"):list():select(3)
 end)
 vim.keymap.set("n", "<leader>h4", function()
-  require("harpoon"):list():select(4)
+	require("harpoon"):list():select(4)
 end)
 
 -- buffalo

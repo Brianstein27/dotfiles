@@ -13,3 +13,8 @@ name = "new template"
 path = "~/.tmuxinator"
 startup_command = "tmuxinator new template"
 
+[[session]]
+name = "dotfiles"
+path = "~/dotfiles/.config"
+startup_command = "nvim"
+

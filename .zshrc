@@ -5,11 +5,12 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-if [ -z "$TMUX" ]
-then
-    tmux attach -t home || tmux new -s home
-fi
+# if [ -z "$TMUX" ]
+# then
+#     tmux attach -t home || tmux  new -s home
+# fi
 
+export EDITOR='nvim'
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -64,11 +65,6 @@ alias recipes="cd /mnt/hdd/mega/life/Cooking/recipes/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
-eval "$(tmuxifier init -)"
-export EDITOR='nvim'
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

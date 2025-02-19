@@ -30,6 +30,7 @@ return {
         "sqlls",
         "emmet_ls",
         "solargraph",
+        "ruby_lsp",
         "stimulus_ls",
         "marksman",
         "tailwindcss",

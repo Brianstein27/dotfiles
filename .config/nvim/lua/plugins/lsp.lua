@@ -5,12 +5,18 @@ return {
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
-        opts = {
-          library = {
-            { "nvim-dap-ui" },
-            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-          },
+        opts = {},
+        library = {
+          { "nvim-dap-ui" },
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
         },
+      },
+    },
+    opts = {
+      servers = {
+        tailwindcss = {},
+        lua_ls = {},
+        ts_ls = {},
       },
     },
     config = function()

@@ -42,25 +42,25 @@ vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, opts)
 
 -- File tree
 vim.keymap.set("n", "<leader>i", function()
-	if vim.bo.filetype == "oil" then
-		require("oil").close()
-	else
-		require("oil").open_float(nil, { preview = { horizontal = true } })
-	end
+  if vim.bo.filetype == "oil" then
+    require("oil").close()
+  else
+    require("oil").open_float(nil, { preview = { horizontal = true } })
+  end
 end)
 
 vim.keymap.set("n", "<leader>e", function()
-	local cwd = vim.uv.cwd()
-	if vim.bo.filetype == "oil" then
-		require("oil").close()
-	else
-		require("oil").open_float(cwd, { preview = { horizontal = true } })
-	end
+  local cwd = vim.uv.cwd()
+  if vim.bo.filetype == "oil" then
+    require("oil").close()
+  else
+    require("oil").open_float(cwd, { preview = { horizontal = true } })
+  end
 end)
 
 -- Messages
 vim.keymap.set("n", "<leader>fn", "<cmd>Noice telescope<CR>")
-vim.keymap.set("n", "<leader>nx", "<cmd>Noice dismiss<CR>")
+vim.keymap.set("n", "<leader>dn", "<cmd>Noice dismiss<CR>")
 
 -- git
 vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk_inline<CR>")
@@ -76,14 +76,32 @@ vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 -- Telescope
 vim.keymap.set("n", "<C-o>", require("telescope.builtin").find_files, opts)
 vim.keymap.set("n", "<C-p>", require("telescope.builtin").live_grep, opts)
-vim.keymap.set("n", "<C-b>", require("telescope.builtin").buffers, opts)
+-- vim.keymap.set("n", "<C-b>", require("telescope.builtin").buffers, opts)
+-- vim.keymap.set("n", "<C-x>", require("telescope.actions").deletej, opts)
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
+
+vim.keymap.set("n", "<C-b>", function()
+  builtin.buffers({
+    initial_mode = "normal",
+    attach_mappings = function(_, map)
+      map({ "i", "n" }, "<C-x>", actions.delete_buffer)
+      return true
+    end,
+  }, {
+    sort_lastused = true,
+    sort_mru = true,
+    theme = "dropdown",
+  })
+end, { desc = "[ ] Find existing buffers" })
+
 vim.keymap.set("n", "<leader>fk", require("telescope.builtin").keymaps, opts)
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, opts)
 vim.keymap.set("n", "<leader>fm", require("telescope.builtin").man_pages, opts)
 vim.keymap.set("n", "<leader>en", function()
-	require("telescope.builtin").find_files({
-		cwd = "~/dotfiles/.config/nvim/",
-	})
+  require("telescope.builtin").find_files({
+    cwd = "~/dotfiles/.config/nvim/",
+  })
 end)
 
 -- Debugger
@@ -95,22 +113,22 @@ vim.keymap.set("n", "<leader>dx", require("dap").step_out, {})
 
 -- Harpoon
 vim.keymap.set("n", "<leader>ha", function()
-	require("harpoon"):list():add()
+  require("harpoon"):list():add()
 end)
 vim.keymap.set("n", "<leader>hl", function()
-	require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+  require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
 end)
 vim.keymap.set("n", "<leader>h1", function()
-	require("harpoon"):list():select(1)
+  require("harpoon"):list():select(1)
 end)
 vim.keymap.set("n", "<leader>h2", function()
-	require("harpoon"):list():select(2)
+  require("harpoon"):list():select(2)
 end)
 vim.keymap.set("n", "<leader>h3", function()
-	require("harpoon"):list():select(3)
+  require("harpoon"):list():select(3)
 end)
 vim.keymap.set("n", "<leader>h4", function()
-	require("harpoon"):list():select(4)
+  require("harpoon"):list():select(4)
 end)
 
 -- buffalo

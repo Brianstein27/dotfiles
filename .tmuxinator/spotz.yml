@@ -47,4 +47,4 @@ root: ~/code/github/spotz/
 windows:
   - editor: nvim
   - server: bin/dev
-  - console: rails c
+  - terminal: sudo systemctl start elasticsearch

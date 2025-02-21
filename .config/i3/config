@@ -208,4 +208,4 @@ exec_always flameshot
 exec_always google-chrome
 exec_always firefox
 exec_always flatpak run md.obsidian.Obsidian 
-exec --no-startup-id i3msg "$ws4; append_layout ~/.config/i3/workspace-4.json"
+exec_always kitty
